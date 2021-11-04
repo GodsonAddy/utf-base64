@@ -69,9 +69,6 @@ import Swal from "sweetalert2";
 
 export default {
   name: "HelloWorld",
-  props: {
-    msg: String,
-  },
   data() {
     return {
       tobi: {
@@ -97,7 +94,7 @@ export default {
         const otp = window.btoa(this.tobi.otpNumber);
         const TOBi = window.btoa(this.tobi.name);
         const response = "Encoded String: " + msisdn + otp + TOBi;
-        this.utfinfo = msisdn + ":" + otp + ":" + TOBi + "\n" + response;
+        this.utfinfo = this.tobi.phoneNumber + ":" + this.tobi.otpNumber+ ":" + this.tobi.name + "\n" + response;
         this.tobi.name = "";
         this.tobi.phoneNumber = "";
         this.tobi.otpNumber = "";
